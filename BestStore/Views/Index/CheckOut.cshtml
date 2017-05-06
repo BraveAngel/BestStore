@@ -27,19 +27,41 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
     <!-- //breadcrumbs -->
     <!-- checkout -->
-<div class="checkout">
-    
-    <div class="container">
-        <h3 class="animated wow slideInLeft" data-wow-delay=".5s">Your shopping cart contains: <span>3 Products</span>
-        </h3>
-        <div class="animated wow slideInUp" data-wow-delay=".5s">
-            <div class="simpleCart_items"></div>
+    <div class="checkout">
+
+        <div class="container">
+            <h3 class="animated wow slideInLeft" data-wow-delay=".5s">
+                Your shopping cart contains:
+            </h3>
+            <div class="animated wow slideInUp" data-wow-delay=".5s">
+
+
+                <div class="simpleCart_items"></div>
+                <ngcart-cart></ngcart-cart>
+            </div>
+            <div class="col-lg-offset-11">
+            <div class="row">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-xs-4">
+
+                <ngcart-checkout service="log">Checkout</ngcart-checkout>
+            </div>
+
+        </div>
+    </div>
+</div></div>
             
         </div>
-
+        
     </div>
-</div>
     <!-- //checkout -->
 
 </body>
 </html>
+<style>
+    .breadcrumbs {
+        padding-top: 263px;
+        background: #f5f5f5;
+    }
+</style>
