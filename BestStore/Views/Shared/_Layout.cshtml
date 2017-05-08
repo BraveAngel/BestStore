@@ -301,9 +301,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <select name="quantity" id="quantity" ng-model="q"
                         ng-options=" v for v in qtyOpt"></select>
             </span>
-            <a class="btn btn-sm btn-primary"
+            <a class="btn btn-sm btn-primary" style="background-color: orangered;color:white"
                ng-click="ngCart.addItem(id, name, price, q, data)"
-               ng-transclude></a>
+               ng-transclude><b></b></a>
         </div>
         <p ng-show="inCart()">
           <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>

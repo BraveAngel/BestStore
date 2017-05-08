@@ -690,12 +690,13 @@ p.est{
 }
 .new-collections-grid1-left p a,.occasion-cart a{
 	font-size: 14px;
-    color: #D8703F;
+    color: black;
+    background-color: orangered;
     margin: 0;
     text-decoration: none;
     text-transform: uppercase;
     padding: .5em 1em;
-    border: 1px solid;
+    border: 3px solid;
 }
 .new-collections-grid1-left p i{
 	color: #999;

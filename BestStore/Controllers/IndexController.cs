@@ -10,7 +10,7 @@ namespace BestStore.Controllers
 {
     public class IndexController : Controller
     {
-       
+
         // GET: Index
         public ActionResult Index()
         {
@@ -57,17 +57,18 @@ namespace BestStore.Controllers
             {
                 using (BestStoreEntities db = new BestStoreEntities())
                 {
-                    var obj = db.USER.FirstOrDefault(a => a.EMAIL.Equals(objUser.EMAIL) && a.PASSWORD.Equals(objUser.PASSWORD));
+                    var obj =
+                        db.USER.FirstOrDefault(a => a.EMAIL.Equals(objUser.EMAIL) && a.PASSWORD.Equals(objUser.PASSWORD));
                     if (obj != null)
                     {
                         Session["UserID"] = obj.USERID.ToString();
                         Session["UserName"] = obj.EMAIL.ToString();
-                     
+
                         return RedirectToAction("Index");
                     }
                 }
             }
-            
+
             return View(objUser);
         }
 
@@ -87,24 +88,57 @@ namespace BestStore.Controllers
         {
 
             BestStoreEntities db = new BestStoreEntities();
-            
-                
-                return View(db.PRODUCT);
 
 
-            
+            return View(db.PRODUCT);
+
+
+
         }
+
         public ActionResult CheckOut()
         {
 
-            
-
-
             return View();
 
+        }
 
+        public ActionResult Product(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var model =
+                new Tuple<BestStore.Models.PRODUCT, System.Data.Entity.DbSet<BestStore.Models.PRODUCT>>(GetProducts(id), GetCategory());
+            if (model.Item1 == null)
+            {
+                return HttpNotFound();
+            }
+            return View(model);
 
         }
-      
+        // making items for tuple
+        public BestStore.Models.PRODUCT GetProducts(int? id)
+        {
+            BestStoreEntities db = new BestStoreEntities();
+
+            PRODUCT product = db.PRODUCT.Find(id);
+
+            return product;
+
+        }
+        // for tuple
+        public System.Data.Entity.DbSet<BestStore.Models.PRODUCT>GetCategory()
+        {
+            BestStoreEntities db = new BestStoreEntities();
+
+
+            return db.PRODUCT;
+
+        }
+
+       
     }
 }
