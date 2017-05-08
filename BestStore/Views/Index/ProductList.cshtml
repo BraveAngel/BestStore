@@ -25,7 +25,6 @@
     <div class="container">
         <div class="col-md-4 products-left">
             <div class="filter-price animated wow slideInUp" data-wow-delay=".5s">
-                <h3>Filter By Price</h3>
                 <ul class="dropdown-menu1">
                     <li>
                         <a href="">
@@ -34,23 +33,27 @@
                         </a>
                     </li>
                 </ul>
-                <script type='text/javascript'>
-                    //<![CDATA[
-                    $(window).load(function () {
-                        $("#slider-range").slider({
-                            range: true,
-                            min: 0,
-                            max: 100000,
-                            values: [20000, 80000],
-                            slide: function (event, ui) {
-                                $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-                            }
-                        });
-                        $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
+                <!-- #ScriptFlexiSlider -->
+             
+                @*<script type='text/javascript'>
+        //<![CDATA[
+        $(window).load(function () {
+            $("#slider-range").slider({
+                range: true,
+                min: 0,
+                max: 100000,
+                values: [20000, 80000],
+                slide: function (event, ui) {
+                    $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                }
+            });
+            $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
 
 
-                    });//]]>
-                </script>
+        });//]]>
+    </script>*@
+                
+                <!-- #endregion -->
 
                 <!---->
             </div>
@@ -89,24 +92,15 @@
                     </div>
                     <div class="clearfix"> </div>
                 </div>
-                <div class="products-right-grids-position animated wow slideInRight" data-wow-delay=".5s">
-
-                    <div class="products-right-grids-position1">
-                        <h4>2016 New Collection</h4>
-                        <p>
-                            Temporibus autem quibusdam et aut officiis debitis aut rerum
-                            necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae
-                            non recusandae.
-                        </p>
-                    </div>
-                </div>
+                
             </div>
 
 
             <div class="products-right-grids-bottom">
+                
                 @foreach (var item in Model)
-            {
-                 
+                {
+                    
                     <div class="col-md-4 products-right-grids-bottom-grid">
                         <div class="new-collections-grid1 products-right-grid1 animated wow slideInUp" data-wow-delay=".5s">
                             <div class="new-collections-grid1-image">
@@ -116,7 +110,7 @@
                                 }
                                 <a href="single.html" class="product-image"><img src="@imgSrc" alt=" " class="img-responsive"></a>
                                 <div class="new-collections-grid1-image-pos products-right-grids-pos">
-                                    <a href="@Url.Action("Product", "Index", new { id = item.PRODUCTID })">Quick View</a>
+                                    <a href="@Url.Action("Product", "Index", new {id = item.PRODUCTID})">Quick View</a>
                                 </div>
                                 <div class="new-collections-grid1-right products-right-grids-pos-right">
 
@@ -133,16 +127,17 @@
 
 
                                 </div>
-                             
+
                             </div>
                             <ngcart-addtocart id="@Html.DisplayFor(modelItem => item.PRODUCTID)" name="@Html.DisplayFor(modelItem => item.PRODUCTNAME)" price="@Html.DisplayFor(modelItem => item.PRICE)" quantity="1" quantity-max="5">Add to Cart</ngcart-addtocart>
                         </div>
-                   
+
                     </div>
+                   
 
                                     }
-
                 <div class="clearfix"> </div>
+                
             </div>
             <nav class="numbering animated wow slideInRight" data-wow-delay=".5s">
                 <ul class="pagination paging">

@@ -41,16 +41,15 @@ angular.module('ngCart.fulfilment', [])
 
  }])
 
-.service('ngCart.fulfilment.http', ['$http', 'ngCart', function($http, ngCart){
-
-        this.checkout = function(settings){
+.service('ngCart.fulfilment.http', ['$http', 'ngCart', function ($http, ngCart) {
+    
+    this.checkout = function(settings) {
+       
             return $http.post(settings.url,
-                { data: ngCart.toObject(), options: settings.options});
-        }
- }])
+                { data: ngCart.toObject(), options: settings.options });
+        
+    };
+
+    }])
 
 
-.service('ngCart.fulfilment.paypal', ['$http', 'ngCart', function($http, ngCart){
-
-
-}]);

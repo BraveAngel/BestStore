@@ -27,17 +27,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/BestStore/style.css" rel="stylesheet" type="text/css" media="all" />
     <!-- js -->
-   
+
     <script src="~/Scripts/jquery-3.1.1.js"></script>
     <script src="~/Scripts/BestStore/jquery-ui.min.js"></script>
-   
+
     <script src="~/Scripts/angular.js"></script>
-    
+
     <!-- //js -->
     <!-- cart -->
     <script src="~/Scripts/ngCart.js"></script>
-    <script src="~/Scripts/ngCart.directives.js"></script>
+
+
     <script src="~/Scripts/ngCart.fulfilment.js"></script>
+    <script src="~/Scripts/ngCart.directives.js"></script>
     <script>
         var myApp = angular.module('myApp', ['ngCart']);
         myApp.controller('myCtrl', ['$scope', '$http', 'ngCart', function ($scope, $http, ngCart) {
@@ -46,9 +48,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         }]);
     </script>
     @*<script src="~/Scripts/BestStore/simpleCart.min.js"></script>*@
- 
-    <!-- cart -->
 
+    <!-- cart -->
     <!-- for bootstrap working -->
     <script type="text/javascript" src="~/Scripts/BestStore/bootstrap-3.1.1.min.js"></script>
     <!-- //for bootstrap working -->
@@ -63,233 +64,234 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script>
         new WOW().init();
     </script>
-    
+
     <!-- //animation-effect -->
 </head>
 
 <body ng-app="myApp">
-<div  ng-controller="myCtrl">
-    <!-- header -->
-    <div class="header navbar-fixed-top" style="background-color: white">
-        <div class="container">
-            <div class="header-grid">
-                <div class="header-grid-left animated wow slideInLeft" data-wow-delay=".5s">
-                    <ul>
-                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com"></a></li>
-                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 892</li>
-                        @if (Session["UserID"] != null)
-                        {
-                            <li>
-                                <i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>
-                                <a href="login.html">Hello @Session["UserName"]</a>
-                            </li>
-                        }
-                        else
-                        {
-                            <li>
-                                <i class="glyphicon glyphicon-log-in" aria-hidden="true">
+    <div ng-controller="myCtrl">
+        <!-- header -->
+        <div class="header navbar-fixed-top" style="background-color: white">
+            <div class="container">
+                <div class="header-grid" style="padding:0.25em 0">
+                    <div class="header-grid-left animated wow slideInLeft" data-wow-delay=".5s">
+                        <ul>
+                            <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com"></a></li>
+                            <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 892</li>
+                            @if (Session["UserID"] != null)
+                            {
+                                <li>
+                                    <i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>
+                                    <a href="login.html">Hello @Session["UserName"]</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <i class="glyphicon glyphicon-log-in" aria-hidden="true">
 
 
-                                </i>@Html.ActionLink("Login", "Login", "Index")
-                            </li>
-                        }
+                                    </i>@Html.ActionLink("Login", "Login", "Index")
+                                </li>
+                            }
 
-
-
-                        <li><i class="glyphicon glyphicon-book" aria-hidden="true"></i>@Html.ActionLink("Register", "Register", "Index")</li>
-                    </ul>
+                            <li><i class="glyphicon glyphicon-book" aria-hidden="true"></i>@Html.ActionLink("Register", "Register", "Index")</li>
+                        </ul>
+                    </div>
+                    <div class="header-grid-right animated wow slideInRight" data-wow-delay=".5s">
+                        <ul class="social-icons">
+                            <li><a href="#" class="facebook"></a></li>
+                            <li><a href="#" class="twitter"></a></li>
+                            <li><a href="#" class="g"></a></li>
+                            <li><a href="#" class="instagram"></a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
                 </div>
-                <div class="header-grid-right animated wow slideInRight" data-wow-delay=".5s">
-                    <ul class="social-icons">
-                        <li><a href="#" class="facebook"></a></li>
-                        <li><a href="#" class="twitter"></a></li>
-                        <li><a href="#" class="g"></a></li>
-                        <li><a href="#" class="instagram"></a></li>
-                    </ul>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="logo-nav">
-                <div class="logo-nav-left animated wow zoomIn" data-wow-delay=".5s">
-                    <h1>
-                        <a href=@Url.Action("Index", "Index")>Best Store <span>Shop anywhere</span></a>
-                    </h1>
-                </div>
-                <div class="logo-nav-left1">
-                    <nav class="navbar navbar-default">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header nav_2">
-                            <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
+                <div class="logo-nav" style="padding:0.25em 0">
+                    <div class="logo-nav-left animated wow zoomIn" data-wow-delay=".5s">
+                        <h1>
+                            <a href=@Url.Action("Index", "Index")>Best Store <span>Shop anywhere</span></a>
+                        </h1>
+                    </div>
+                    <div class="logo-nav-left1">
+                        <nav class="navbar navbar-default">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header nav_2">
+                                <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href=@Url.Action("Index", "Index") class="act">Home</a></li>
+                                    <!-- Mega Menu -->
+                                    <li class="dropdown">
+                                        <a href=@Url.Action("ProductList", "Index") class="act">Products </a>
+
+
+                                    <li><a href=@Url.Action("Index", "Index")>Mail Us</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="logo-nav-right">
+                        <div class="search-box">
+                            <div id="sb-search" class="sb-search">
+                                <form>
+                                    <input class="sb-search-input" placeholder="Enter your search term..." type="search" id="search">
+                                    <input class="sb-search-submit" type="submit" value="">
+                                    <span class="sb-icon-search"> </span>
+                                </form>
+                            </div>
                         </div>
-                        <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                            <ul class="nav navbar-nav">
-                                <li class="active"><a href=@Url.Action("Index", "Index") class="act">Home</a></li>
-                                <!-- Mega Menu -->
-                                <li class="dropdown">
-                                <a href=@Url.Action("ProductList", "Index") class="act">Products </a>
+                        <!-- search-scripts -->
+                        <script src="~/Scripts/BestStore/classie.js"></script>
+                        <script src="~/Scripts/BestStore/uisearch.js"></script>
+                        <script>
+                            new UISearch(document.getElementById('sb-search'));
+                        </script>
+                        <!-- //Html.ActionLink("Login", "Index") -->
+                    </div>
+                    <div class="header-right">
+                        <div class="cart box_1">
 
+                            <a href=@Url.Action("CheckOut", "Index")>
+                                <h3>
+                                    <div class="total">
+                                        <ngcart-summary></ngcart-summary>
+                                    </div>
+                                    <img src="~/images/bag.png" alt="" />
+                                </h3>
+                            </a>
+                            <p>
 
-                                <li><a href=@Url.Action("Index", "Index")>Mail Us</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-                <div class="logo-nav-right">
-                    <div class="search-box">
-                        <div id="sb-search" class="sb-search">
-                            <form>
-                                <input class="sb-search-input" placeholder="Enter your search term..." type="search" id="search">
-                                <input class="sb-search-submit" type="submit" value="">
-                                <span class="sb-icon-search"> </span>
-                            </form>
+                            </p>
+                            <div class="clearfix"> </div>
                         </div>
                     </div>
-                    <!-- search-scripts -->
-                    <script src="~/Scripts/BestStore/classie.js"></script>
-                    <script src="~/Scripts/BestStore/uisearch.js"></script>
-                    <script>
-                        new UISearch(document.getElementById('sb-search'));
-                    </script>
-                    <!-- //Html.ActionLink("Login", "Index") -->
+                    <div class="clearfix"> </div>
                 </div>
-                <div class="header-right">
-                    <div class="cart box_1">
-
-                        <a href=@Url.Action("CheckOut", "Index")>
-                            <h3>
-                                <div class="total">
-                                    <ngcart-summary></ngcart-summary>
-                                </div>
-                                <img src="~/images/bag.png" alt="" />
-                            </h3>
-                        </a>
-                        <p>
-                      
-                        </p>
+            </div>
+        </div>
+        <!-- //header -->
+        <!-- banner -->
+        <!-- //banner -->
+        <!-- banner-bottom -->
+        @RenderBody()
+        <!-- //banner-bottom -->
+        <!-- collections -->
+        <!-- //collections -->
+        <!-- new-timer -->
+        <!-- //new-timer -->
+        <!-- collections-bottom -->
+        <!-- //collections-bottom -->
+        <!-- footer -->
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="footer-grids">
+                <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
+                    <h3>About Us</h3>
+                    <p>
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse.<span>
+                            Excepteur sint occaecat cupidatat
+                            non proident, sunt in culpa qui officia deserunt mollit.
+                        </span>
+                    </p>
+                </div>
+                <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".6s">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
+                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
+                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".7s">
+                    <h3>Flickr Posts</h3>
+                    <div class="footer-grid-left">
+                        <a href="single.html"><img src="~/images/13.jpg" alt=" " class="img-responsive" /></a>
+                    </div>
+                    <div class="footer-grid-left">
+                        <a href="single.html"><img src="~/images/14.jpg" alt=" " class="img-responsive" /></a>
+                    </div>
+                    <div class="footer-grid-left">
+                        <a href="single.html"><img src="~/images/15.jpg" alt=" " class="img-responsive" /></a>
+                    </div>
+                    <div class="footer-grid-left">
+                        <a href="single.html"><img src="~/images/16.jpg" alt=" " class="img-responsive" /></a>
+                    </div>
+                    <div class="footer-grid-left">
+                        <a href="single.html"><img src="~/images/13.jpg" alt=" " class="img-responsive" /></a>
+                    </div>
+                    <div class="footer-grid-left">
+                        <a href="single.html"><img src="~/images/14.jpg" alt=" " class="img-responsive" /></a>
+                    </div>
+                    <div class="footer-grid-left">
+                        <a href="single.html"><img src="~/images/15.jpg" alt=" " class="img-responsive" /></a>
+                    </div>
+                    <div class="footer-grid-left">
+                        <a href="single.html"><img src="~/images/16.jpg" alt=" " class="img-responsive" /></a>
+                    </div>
+                    <div class="footer-grid-left">
+                        <a href="single.html"><img src="~/images/13.jpg" alt=" " class="img-responsive" /></a>
+                    </div>
+                    <div class="footer-grid-left">
+                        <a href="single.html"><img src="~/images/14.jpg" alt=" " class="img-responsive" /></a>
+                    </div>
+                    <div class="footer-grid-left">
+                        <a href="single.html"><img src="~/images/15.jpg" alt=" " class="img-responsive" /></a>
+                    </div>
+                    <div class="footer-grid-left">
+                        <a href="single.html"><img src="~/images/16.jpg" alt=" " class="img-responsive" /></a>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".8s">
+                    <h3>Blog Posts</h3>
+                    <div class="footer-grid-sub-grids">
+                        <div class="footer-grid-sub-grid-left">
+                            <a href="single.html"><img src="~/images/9.jpg" alt=" " class="img-responsive" /></a>
+                        </div>
+                        <div class="footer-grid-sub-grid-right">
+                            <h4><a href="single.html">culpa qui officia deserunt</a></h4>
+                            <p>Posted On 25/3/2016</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="footer-grid-sub-grids">
+                        <div class="footer-grid-sub-grid-left">
+                            <a href="single.html"><img src="~/images/10.jpg" alt=" " class="img-responsive" /></a>
+                        </div>
+                        <div class="footer-grid-sub-grid-right">
+                            <h4><a href="single.html">Quis autem vel eum iure</a></h4>
+                            <p>Posted On 25/3/2016</p>
+                        </div>
                         <div class="clearfix"> </div>
                     </div>
                 </div>
                 <div class="clearfix"> </div>
             </div>
-        </div>
-    </div>
-    <!-- //header -->
-    <!-- banner -->
-    <!-- //banner -->
-    <!-- banner-bottom -->
-    @RenderBody()
-    <!-- //banner-bottom -->
-    <!-- collections -->
-    <!-- //collections -->
-    <!-- new-timer -->
-    <!-- //new-timer -->
-    <!-- collections-bottom -->
-    <!-- //collections-bottom -->
-    <!-- footer -->
-</div>
-<div class="footer">
-    <div class="container">
-        <div class="footer-grids">
-            <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
-                <h3>About Us</h3>
+            <div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
+                <h2>
+                    <a href="index.html">Best Store <span>shop anywhere</span></a>
+                </h2>
+            </div>
+            <div class="copy-right animated wow slideInUp" data-wow-delay=".5s">
                 <p>
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse.<span>
-                        Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit.
-                    </span>
+                    &copy 2016 Best Store. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a>
                 </p>
             </div>
-            <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".6s">
-                <h3>Contact Info</h3>
-                <ul>
-                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
-                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
-                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
-                </ul>
-            </div>
-            <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".7s">
-                <h3>Flickr Posts</h3>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="~/images/13.jpg" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="~/images/14.jpg" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="~/images/15.jpg" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="~/images/16.jpg" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="~/images/13.jpg" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="~/images/14.jpg" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="~/images/15.jpg" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="~/images/16.jpg" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="~/images/13.jpg" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="~/images/14.jpg" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="~/images/15.jpg" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="footer-grid-left">
-                    <a href="single.html"><img src="~/images/16.jpg" alt=" " class="img-responsive"/></a>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".8s">
-                <h3>Blog Posts</h3>
-                <div class="footer-grid-sub-grids">
-                    <div class="footer-grid-sub-grid-left">
-                        <a href="single.html"><img src="~/images/9.jpg" alt=" " class="img-responsive"/></a>
-                    </div>
-                    <div class="footer-grid-sub-grid-right">
-                        <h4><a href="single.html">culpa qui officia deserunt</a></h4>
-                        <p>Posted On 25/3/2016</p>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="footer-grid-sub-grids">
-                    <div class="footer-grid-sub-grid-left">
-                        <a href="single.html"><img src="~/images/10.jpg" alt=" " class="img-responsive"/></a>
-                    </div>
-                    <div class="footer-grid-sub-grid-right">
-                        <h4><a href="single.html">Quis autem vel eum iure</a></h4>
-                        <p>Posted On 25/3/2016</p>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-        <div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
-            <h2><a href="index.html">Best Store <span>shop anywhere</span></a>
-            </h2>
-        </div>
-        <div class="copy-right animated wow slideInUp" data-wow-delay=".5s">
-            <p>&copy 2016 Best Store. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a>
-            </p>
         </div>
     </div>
-</div>
-<!-- //footer -->
+    <!-- //footer -->
 </body>
 </html>
+
 <script type="text/ng-template" id="template/ngCart/addtocart.html">
     <div ng-hide="attrs.id">
         <a class="btn btn-lg btn-primary" ng-disabled="true" ng-transclude></a>
@@ -303,11 +305,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </span>
             <a class="btn btn-sm btn-primary" style="background-color: orangered;color:white"
                ng-click="ngCart.addItem(id, name, price, q, data)"
-               ng-transclude><b></b></a>
+               ng-transclude><b></b></a><span ng-show="inCart()">
+    <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
+</span>
+            
         </div>
-        <p ng-show="inCart()">
-          <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
-        </p>
+       
     </div>
 </script>
 
@@ -387,12 +390,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 
+
+
 <script type="text/ng-template" id="template/ngCart/checkout.html">
 
-    <div ng-if="service=='http' || service == 'log'">
-        <button class="btn btn-primary" ng-click="checkout()" ng-disabled="!ngCart.getTotalItems()" ng-transclude>Checkout</button>
-    </div>
 
+    <div ng-if="service=='http' || service == 'log'">
+        <button class="btn btn-primary md-primary btn-info md-raised" ng-click="checkout()"ng-disabled="!ngCart.getTotalItems()" ng-transclude style="background-color: orangered;color:white" data-target="#myModal" data-toggle="modal"></button></div>
+   
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Buy Now</h4>
+                </div>
+                <div class="modal-body">
+                    <ul ng-repeat="item in ngCart.getCart().items track by $index">You will buy: <ul style="font-weight: bold"> {{ item.getName() }}</ul> </ul>
+                </div>
+                <a href="@Url.Action("ProductList", "Index")"><button type="button" class="col-md-offset-10 btn btn-primary" style="background-color: orangered;color:white">Buy</button></a>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <div ng-if="service=='paypal'">
 
@@ -426,10 +452,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         color: #1758AA;
     }
 
-        h3 span {
-            font-size: 14px;
-            display: block;
-        }
+    h3 span {
+        font-size: 14px;
+        display: block;
+    }
 
     span[ng-click] {
         cursor: pointer;

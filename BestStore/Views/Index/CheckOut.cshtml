@@ -44,8 +44,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="col-lg-12">
         <div class="row">
             <div class="col-xs-4">
-
-                <ngcart-checkout service="log">Checkout</ngcart-checkout>
+                
+                <md-button class="md-primary md-raised" ng-click="showConfirm($event)">
+                    <ngcart-checkout service="log">Checkout</ngcart-checkout>
+                </md-button>
             </div>
 
         </div>
@@ -55,13 +57,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
         
     </div>
-    <!-- //checkout -->
-
 </body>
 </html>
-<style>
-    .breadcrumbs {
-        padding-top: 263px;
-        background: #f5f5f5;
-    }
-</style>
